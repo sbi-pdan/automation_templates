@@ -1,0 +1,181 @@
+---
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.4.0
+      hooks:
+          - id: trailing-whitespace
+          - id: check-added-large-files
+          - id: end-of-file-fixer
+          - id: check-yaml
+          - id: check-json
+          - id: detect-private-key
+          - id: forbid-submodules
+          - id: requirements-txt-fixer
+          - id: check-symlinks
+          - id: pretty-format-json
+          - id: sort-simple-yaml
+          - id: debug-statements
+          - id: double-quote-string-fixer
+          - id: name-tests-test
+          - id: requirements-txt-fixer
+          - id: check-xml
+          - id: check-ast                                   # simply checks whether the files parse as valid python.
+          - id: check-builtin-literals                      # requires literal syntax when initializing empty or zero python builtin types.
+          - id: check-docstring-first                       # checks a common error of defining a docstring after code.
+          - id: debug-statements                            # checks for debugger imports and py37+ `breakpoint()` calls in python source.
+          - id: double-quote-string-fixer                   # replaces double quoted strings with single quoted strings.
+          - id: fix-encoding-pragma                         # adds # -*- coding: utf-8 -*- to the top of python files.
+
+    - repo: https://github.com/datarootsio/databooks
+      rev: 1.3.8
+      hooks:
+          - id: databooks-meta
+    - repo: https://github.com/antonbabenko/pre-commit-terraform
+      rev: v1.83.0
+      hooks:
+          - id: infracost_breakdown                         # Check terraform infrastructure cost
+          - id: terraform_fmt                               # Rewrites all Terraform configuration files to a canonical format.
+          - id: terraform_docs                              # Inserts input and output documentation into README.md (using terraform-docs).
+          - id: terraform_docs_without_aggregate_type_defaults # Inserts input and output documentation into README.md (using terraform-docs). Identical to terraform_docs.
+          - id: terraform_docs_replace                      # Overwrite content of README.md with terraform-docs.
+          - id: terraform_validate                          # Validates all Terraform configuration files.
+          - id: terraform_providers_lock                    # Updates provider signatures in dependency lock files.
+          - id: terraform_tflint                            # Validates all Terraform configuration files with TFLint.
+          - id: terragrunt_fmt                              # Rewrites all Terragrunt configuration files to a canonical format.
+          - id: terragrunt_validate                         # Validates all Terragrunt configuration files.
+          #- id: terraform_tfsec                             # Static analysis of Terraform templates to spot potential security issues.
+          - id: checkov                                     # Runs checkov on Terraform templates.
+          - id: terraform_checkov                           # Runs checkov on Terraform templates.
+          - id: terraform_wrapper_module_for_each           # Generate Terraform wrappers with for_each in module.
+          - id: terrascan                                   # Runs terrascan on Terraform templates.
+          - id: tfupdate                                    # Runs tfupdate on Terraform templates.
+    - repo: https://github.com/nbQA-dev/nbQA
+      rev: 1.7.0
+      hooks:
+          - id: nbqa-pyupgrade
+          - id: nbqa-mypy
+          - id: nbqa-flake8
+          - id: nbqa-pydocstyle
+          - id: nbqa-check-ast
+          - id: nbqa-pyupgrade
+          - id: nbqa-flake8
+
+    - repo: https://github.com/hadialqattan/pycln
+      rev: v2.2.2
+      hooks:
+          - id: pycln
+    - repo: https://github.com/jendrikseipp/vulture
+      rev: v2.9.1
+      hooks:
+          - id: vulture
+    - repo: https://github.com/janosh/format-ipy-cells
+      rev: v0.1.10
+      hooks:
+          - id: format-ipy-cells
+    - repo: https://github.com/mxr/unkey
+      rev: v0.0.1
+      hooks:
+          - id: unkey
+    - repo: https://github.com/python-jsonschema/check-jsonschema
+      rev: 0.26.3
+      hooks:
+          - id: check-azure-pipelines
+    - repo: https://github.com/asottile/reorder-python-imports
+      rev: v3.10.0
+      hooks:
+          - id: reorder-python-imports
+    - repo: https://github.com/pre-commit/mirrors-autopep8
+      rev: v2.0.4
+      hooks:
+          - id: autopep8
+    - repo: https://github.com/pre-commit/mirrors-mypy
+      rev: v1.5.1
+      hooks:
+          - id: mypy
+    - repo: https://github.com/frnmst/md-toc
+      rev: 8.2.0
+      hooks:
+          - id: md-toc
+    - repo: https://github.com/peterdemin/pip-compile-multi
+      rev: v2.6.3
+      hooks:
+          - id: pip-compile-multi-verify
+    - repo: https://github.com/asottile/pyupgrade
+      rev: v3.10.1
+      hooks:
+          - id: pyupgrade
+    - repo: https://github.com/asottile/yesqa
+      rev: v1.5.0
+      hooks:
+          - id: yesqa
+    - repo: https://github.com/PyCQA/flake8
+      rev: 6.1.0
+      hooks:
+          - id: flake8
+    - repo: https://github.com/PyCQA/bandit
+      rev: 1.7.5
+      hooks:
+          - id: bandit
+    - repo: https://github.com/PyCQA/prospector
+      rev: v1.9.0
+      hooks:
+          - id: prospector
+    - repo: https://github.com/PyCQA/docformatter
+      rev: v1.7.5
+      hooks:
+          - id: docformatter-venv
+    - repo: https://github.com/asottile/setup-cfg-fmt
+      rev: v2.4.0
+      hooks:
+          - id: setup-cfg-fmt
+    - repo: https://github.com/tfsec/tfsec
+      rev: v1.28.1
+      hooks:
+          - id: tfsec
+        #  - id: tfsec-docker
+        #  - id: tfsec-system
+    - repo: https://github.com/fortman/pre-commit-prometheus
+      rev: v1.2.0
+      hooks:
+          - id: check-config
+          - id: check-rules
+          - id: test-rules
+    - repo: https://github.com/sqlfluff/sqlfluff
+      rev: 2.3.1
+      hooks:
+          - id: sqlfluff-lint
+          - id: sqlfluff-fix
+    - repo: https://github.com/Yelp/detect-secrets
+      rev: v1.4.0
+      hooks:
+          - id: detect-secrets
+
+
+# To be added:
+#    - repo: https://github.com/mwouts/jupytext
+#      rev: v1.15.1
+#      hooks:
+#          - id: jupytext
+# - repo: https://github.com/jumanjihouse/pre-commit-hooks
+#   rev: 3.0.0
+#   hooks:
+#       - id: markdownlint
+#       - id: script-must-have-extension
+#    -   repo: https://github.com/APIDevTools/swagger-cli
+#        rev: v4.0.4
+#        hooks:
+#        -   id: swagger-validation
+#    - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+#      rev: 0.2.3
+#      hooks:
+#          - id: yamlfmt
+#    - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+#      rev: v2.10.0
+#      hooks:
+#          - id: pretty-format-yaml
+#    - repo: https://github.com/aws-cloudformation/cfn-lint
+#      rev: v1.1.0.a2
+#      hooks:
+#          - id: cfn-python-lint
+#          - id: cfn-lint
+#          - id: cfn-lint-rc
